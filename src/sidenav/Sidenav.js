@@ -1,13 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import './Header.scss'
 
 const authenticatedOptions = (
   <React.Fragment>
     <Link to="/change-password">Change Password</Link>
     <Link to="/sign-out">Sign Out</Link>
-    <Link to="/favorites">Favorites</Link>
   </React.Fragment>
 )
 
@@ -21,19 +19,11 @@ const unauthenticatedOptions = (
 const alwaysOptions = (
   <React.Fragment>
     <Link to="/">Home</Link>
-    <Link to='/movies'>Movies</Link>
   </React.Fragment>
 )
 
-const Header = ({ user }) => (
-  <header className="main-header">
-    <h1>sceneIt</h1>
-    <nav className='auth-nav'>
-      { user && <span>Welcome, {user.email}</span>}
-      { user ? authenticatedOptions : unauthenticatedOptions }
-      { alwaysOptions }
-    </nav>
-  </header>
+const Sidenav = ({ user }) => (
+  
 )
 
-export default Header
+export default Sidenav
