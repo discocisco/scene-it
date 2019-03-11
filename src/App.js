@@ -10,6 +10,7 @@ import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import Home from './main/Home.js'
 import Movies from './main/movies/Movies.js'
+import MoviePage from './main/movies/MoviePage.js'
 
 import Alert from 'react-bootstrap/Alert'
 
@@ -62,6 +63,9 @@ class App extends Component {
           )} />
           <Route exact path='/movies' render={() => (
             <Movies alert={this.alert} setUser={this.setUser} />
+          )} />
+          <Route exact path='/movies/:id' render={() => (
+            <MoviePage alert={this.alert} setUser={this.setUser} />
           )} />
         </main>
       </React.Fragment>
