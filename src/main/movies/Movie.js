@@ -2,7 +2,7 @@ import React from 'react'
 
 import Card from 'react-bootstrap/Card'
 
-const Movie = ({ id, name, releaseDate, poster }) => (
+const MovieCard = ({ id, name, releaseDate, poster }) => (
   <div className='col-3'>
     <Card bg='dark' text='white'>
       <Card.Img variant="top" src={poster} />
@@ -17,4 +17,4 @@ const Movie = ({ id, name, releaseDate, poster }) => (
   </div>
 )
 
-export default Movie
+export default MovieCard

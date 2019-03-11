@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 
-import Movies from './movies/Movies.js'
+import HomeMovies from './movies/HomeMovies.js'
 
 import Carousel from 'react-bootstrap/Carousel'
 
@@ -53,7 +53,7 @@ class Home extends Component {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
-        <Movies />
+        <HomeMovies />
       </Fragment>
     )
   }

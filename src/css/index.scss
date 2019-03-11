@@ -12,3 +12,18 @@ body {
 .alert {
   margin: 30px;
 }
+
+.home-img-thumbnail {
+  height: 277px;
+  width: 277px;
+
+  .img-thumbnail {
+    border: 0;
+    border-radius: 0;
+    height: 277px;
+    object-fit: cover;
+    object-position: -50% 0;
+    padding: 0;
+    width: 277px;
+  }
+}

@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 
-import MovieCard from './Movie.js'
+import MovieThumbnail from './MovieThumbnail.js'
 import { getMovies } from './api.js'
 import messages from './messages.js'
 
-class Movies extends Component {
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+
+class HomeMovies extends Component {
   constructor () {
     super()
 
@@ -32,18 +35,18 @@ class Movies extends Component {
     }
 
     return (
-      <div className='row'>
-        {movies.map(movie =>
-          <MovieCard
-            key={movie.id}
-            id={movie.id}
-            name={movie.name}
-            releaseDate={movie.release_date}
-            poster={movie.poster}
-          />)}
-      </div>
+      <Container>
+        <Row>
+          {movies.map(movie =>
+            <MovieThumbnail
+              key={movie.id}
+              id={movie.id}
+              name={movie.name}
+              poster={movie.poster}/>)}
+        </Row>
+      </Container>
     )
   }
 }
 
-export default Movies
+export default HomeMovies
