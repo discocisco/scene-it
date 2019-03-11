@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import MovieCard from './Movie.js'
+import MovieCard from './MovieCard.js'
 import { getMovies } from './api.js'
 import messages from './messages.js'
 
