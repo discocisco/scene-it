@@ -27,3 +27,12 @@ body {
     width: 277px;
   }
 }
+
+.card {
+  margin: 20px 0;
+
+  .card-img-top {
+    height: 380px;
+    object-fit: cover;
+  }
+}
