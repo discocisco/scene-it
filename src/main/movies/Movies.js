@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import Movie from './Movie.js'
 import { getMovies } from './api.js'
 import messages from './messages.js'
 
@@ -31,7 +32,16 @@ class Movies extends Component {
     }
 
     return (
-      <p>Nice</p>
+      <div className='row'>
+        {movies.map(movie =>
+          <Movie
+            key={movie.id}
+            id={movie.id}
+            name={movie.name}
+            releaseDate={movie.release_date}
+            poster={movie.poster}
+          />)}
+      </div>
     )
   }
 }
