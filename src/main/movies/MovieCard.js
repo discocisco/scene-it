@@ -1,4 +1,5 @@
 import React from 'react'
+import moment from 'moment'
 
 import Card from 'react-bootstrap/Card'
 
@@ -11,7 +12,7 @@ const MovieCard = ({ id, name, releaseDate, poster }) => (
         <Card.Text>See more..</Card.Text>
       </Card.Body>
       <Card.Footer>
-        <small className="text-muted">Released on {releaseDate}</small>
+        <small className="text-muted">Released on {moment(releaseDate).format('ll')}</small>
       </Card.Footer>
     </Card>
   </div>

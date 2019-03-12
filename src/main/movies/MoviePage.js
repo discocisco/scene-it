@@ -1,8 +1,14 @@
 import React, { Component, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
+import moment from 'moment'
 
 import { showMovie } from './api.js'
 import messages from './messages.js'
+
+import Jumbotron from 'react-bootstrap/Jumbotron'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 class MoviePage extends Component {
   constructor () {
@@ -33,8 +39,20 @@ class MoviePage extends Component {
   render () {
     return (
       <Fragment>
-        <h1>{this.state.name}</h1>
-        <p>{this.state.releaseDate}</p>
+        <Jumbotron>
+          <h1>{this.state.name}</h1>
+          <hr className="my-4"></hr>
+          <p>Released on {moment(this.state.releaseDate).format('LL')}</p>
+        </Jumbotron>
+        <Container>
+          <Row>
+            <Col xs='8'>
+            </Col>
+            <Col xs='4'>
+              <img src={this.state.poster}/>
+            </Col>
+          </Row>
+        </Container>
       </Fragment>
     )
   }
