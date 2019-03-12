@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 import moment from 'moment'
 
+import './MoviePage.scss'
+
 import Reviews from './Reviews.js'
 import { showMovie } from './api.js'
 import messages from './messages.js'
@@ -51,7 +53,7 @@ class MoviePage extends Component {
               <Reviews name={this.state.name}/>
             </Col>
             <Col xs='4'>
-              <img src={this.state.poster}/>
+              <img className='movie-page-poster' src={this.state.poster}/>
             </Col>
           </Row>
         </Container>
