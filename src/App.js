@@ -12,6 +12,7 @@ import Home from './main/Home.js'
 import Movies from './main/movies/Movies.js'
 import MoviePage from './main/movies/MoviePage.js'
 import ReviewCreate from './main/movies/ReviewCreate.js'
+import ReviewEdit from './main/movies/ReviewEdit.js'
 
 import Alert from 'react-bootstrap/Alert'
 
@@ -70,6 +71,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/movies/:id/review-create' render={() => (
             <ReviewCreate alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/reviews/:id/edit' render={() => (
+            <ReviewEdit alert={this.alert} user={user} />
           )} />
         </main>
       </React.Fragment>

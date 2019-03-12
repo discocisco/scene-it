@@ -22,6 +22,13 @@ export const getReviews = () => {
   })
 }
 
+export const showReview = (id) => {
+  return axios({
+    method: 'GET',
+    url: apiUrl + '/reviews/' + id
+  })
+}
+
 export const createReview = (id, token, textBody) => {
   return axios({
     method: 'POST',
@@ -33,6 +40,21 @@ export const createReview = (id, token, textBody) => {
       review: {
         text_body: textBody,
         movie_id: id
+      }
+    }
+  })
+}
+
+export const updateReview = (id, token, textBody) => {
+  return axios({
+    method: 'PATCH',
+    url: apiUrl + '/reviews/' + id,
+    headers: {
+      'Authorization': `Token token=${token}`
+    },
+    data: {
+      review: {
+        text_body: textBody
       }
     }
   })
