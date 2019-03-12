@@ -13,10 +13,6 @@ class ReviewCreate extends Component {
     }
   }
 
-  componentDidMount () {
-    console.log('movie id is ', this.state.movieId, ' and token is', this.props.user.token)
-  }
-
   addReview = (event) => {
     const { history } = this.props
     event.preventDefault()
