@@ -14,3 +14,10 @@ export const showMovie = (id) => {
     url: apiUrl + '/movies/' + id
   })
 }
+
+export const getReviews = () => {
+  return axios({
+    method: 'GET',
+    url: apiUrl + '/reviews'
+  })
+}
