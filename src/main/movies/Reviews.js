@@ -46,8 +46,8 @@ class Reviews extends Component {
           <Fragment key={review.id}>
             <p>{review.text_body}</p>
             <p>{review.user.email}</p>
-            {this.state.user ? (this.state.user.email === review.user.email ? <button onClick={() => this.removeReview(review.id)}>Delete</button> : '') : ''}
             {this.state.user ? (this.state.user.email === review.user.email ? <Link to={`/reviews/${review.id}/edit`} params={{ movieId: review.movie.id, textBody: review.text_body }}><button>Edit</button></Link> : '') : ''}
+            {this.state.user ? (this.state.user.email === review.user.email ? <button onClick={() => this.removeReview(review.id)}>Delete</button> : '') : ''}
           </Fragment>
         )}
       </div>

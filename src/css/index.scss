@@ -22,7 +22,7 @@ body {
     border-radius: 0;
     height: 277px;
     object-fit: cover;
-    object-position: -50% 0;
+    object-position: top;
     padding: 0;
     width: 277px;
   }
@@ -33,6 +33,5 @@ body {
 
   .card-img-top {
     height: 380px;
-    object-fit: cover;
   }
 }
