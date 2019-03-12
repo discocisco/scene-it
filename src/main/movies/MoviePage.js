@@ -52,7 +52,7 @@ class MoviePage extends Component {
         <Container>
           <Row>
             <Col xs='8'>
-              <Reviews name={this.state.name}/>
+              <Reviews name={this.state.name} user={this.state.user}/>
             </Col>
             <Col xs='4'>
               <img className='movie-page-poster' src={this.state.poster}/>

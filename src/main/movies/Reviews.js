@@ -4,10 +4,11 @@ import { withRouter } from 'react-router-dom'
 import { getReviews } from './api.js'
 
 class Reviews extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
 
     this.state = {
+      user: this.props.user,
       reviews: null
     }
   }
@@ -32,6 +33,7 @@ class Reviews extends Component {
           <Fragment key={review.id}>
             <p>{review.text_body}</p>
             <p>{review.user.email}</p>
+            {this.state.user ? (this.state.user.email === review.user.email ? <button>Delete</button> : '') : ''}
           </Fragment>
         )}
       </div>
