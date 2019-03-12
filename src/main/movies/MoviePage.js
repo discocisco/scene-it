@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import moment from 'moment'
 
 import './MoviePage.scss'
@@ -14,13 +14,14 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 class MoviePage extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
 
     this.state = {
       name: null,
       releaseDate: null,
-      poster: null
+      poster: null,
+      user: props.user
     }
   }
 
@@ -46,6 +47,7 @@ class MoviePage extends Component {
           <h1>{this.state.name}</h1>
           <hr className="my-4"></hr>
           <p>Released on {moment(this.state.releaseDate).format('LL')}</p>
+          {this.state.user ? <Link to={'/movies/' + this.props.match.params.id + '/review-create'} params={{ movieId: this.props.match.params.id }}><button>Add review</button></Link> : ''}
         </Jumbotron>
         <Container>
           <Row>

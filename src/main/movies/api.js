@@ -21,3 +21,19 @@ export const getReviews = () => {
     url: apiUrl + '/reviews'
   })
 }
+
+export const createReview = (id, token, textBody) => {
+  return axios({
+    method: 'POST',
+    url: apiUrl + '/reviews',
+    headers: {
+      'Authorization': `Token token=${token}`
+    },
+    data: {
+      review: {
+        text_body: textBody,
+        movie_id: id
+      }
+    }
+  })
+}

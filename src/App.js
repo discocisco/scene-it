@@ -11,6 +11,7 @@ import ChangePassword from './auth/components/ChangePassword'
 import Home from './main/Home.js'
 import Movies from './main/movies/Movies.js'
 import MoviePage from './main/movies/MoviePage.js'
+import ReviewCreate from './main/movies/ReviewCreate.js'
 
 import Alert from 'react-bootstrap/Alert'
 
@@ -62,10 +63,13 @@ class App extends Component {
             <Home alert={this.alert} set={this.setUser} user={user} />
           )} />
           <Route exact path='/movies' render={() => (
-            <Movies alert={this.alert} setUser={this.setUser} />
+            <Movies alert={this.alert} setUser={this.setUser} user={user} />
           )} />
           <Route exact path='/movies/:id' render={() => (
-            <MoviePage alert={this.alert} setUser={this.setUser} />
+            <MoviePage alert={this.alert} setUser={this.setUser} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/movies/:id/review-create' render={() => (
+            <ReviewCreate alert={this.alert} user={user} />
           )} />
         </main>
       </React.Fragment>
