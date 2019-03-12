@@ -37,3 +37,13 @@ export const createReview = (id, token, textBody) => {
     }
   })
 }
+
+export const deleteReview = (id, token) => {
+  return axios({
+    method: 'DELETE',
+    url: apiUrl + '/reviews/' + id,
+    headers: {
+      'Authorization': `Token token=${token}`
+    }
+  })
+}
