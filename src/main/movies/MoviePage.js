@@ -6,6 +6,7 @@ import './MoviePage.scss'
 
 import Reviews from './Reviews.js'
 import { showMovie } from './api.js'
+import { getFavorites } from '../favorites/api.js'
 import messages from './messages.js'
 
 import Jumbotron from 'react-bootstrap/Jumbotron'
@@ -21,7 +22,9 @@ class MoviePage extends Component {
       name: null,
       releaseDate: null,
       poster: null,
-      user: props.user
+      user: props.user,
+      favorites: [],
+      isFavorite: false
     }
   }
 
@@ -38,6 +41,21 @@ class MoviePage extends Component {
         console.error(error)
         alert(messages.showMovieFailure, 'danger')
       })
+
+    if (this.props.user) {
+      getFavorites(this.props.user.token)
+        .then(res => {
+          if (res.data.favorites.some(fav => fav.movie.id === Number(match.params.id))) {
+            this.setState({ favorites: res.data.favorites, isFavorite: true })
+          } else {
+            this.setState({ favorites: res.data.favorites })
+          }
+        })
+        .catch(error => {
+          console.error(error)
+          alert(messages.getFavoritesFailure, 'danger')
+        })
+    }
   }
 
   render () {
@@ -47,11 +65,12 @@ class MoviePage extends Component {
           <h1>{this.state.name}</h1>
           <hr className="my-4"></hr>
           <p>Released on {moment(this.state.releaseDate).format('LL')}</p>
-          {this.state.user ? <Link to={'/movies/' + this.props.match.params.id + '/review-create'} params={{ movieId: this.props.match.params.id }}><button>Add review</button></Link> : ''}
+          {this.state.user ? (this.state.isFavorite ? <button>Remove from Favorites</button> : <button>Add to Favorites</button>) : ''}
         </Jumbotron>
         <Container>
           <Row>
             <Col xs='8'>
+              {this.state.user ? <Link to={'/movies/' + this.props.match.params.id + '/review-create'} params={{ movieId: this.props.match.params.id }}><button>Add review</button></Link> : ''}
               <Reviews name={this.state.name} user={this.state.user}/>
             </Col>
             <Col xs='4'>

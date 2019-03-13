@@ -4,14 +4,14 @@ import moment from 'moment'
 
 import Card from 'react-bootstrap/Card'
 
-const MovieCard = ({ id, name, releaseDate, poster }) => (
+const MovieCard = ({ id, name, releaseDate, poster, favorite }) => (
   <div className='col-3'>
     <Card bg='dark' text='white'>
       <Link to={'/movies/' + id}>
         <Card.Img variant="top" src={poster} />
       </Link>
       <Card.Body>
-        <Card.Title>{name}</Card.Title>
+        <Card.Title>{name} {favorite && '💜'}</Card.Title>
         <Link to={'/movies/' + id}>
           <Card.Text>See more..</Card.Text>
         </Link>
