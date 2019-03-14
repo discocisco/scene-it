@@ -69,3 +69,11 @@ export const deleteReview = (id, token) => {
     }
   })
 }
+
+export const findTheaters = (search) => {
+  return axios({
+    method: 'POST',
+    url: apiUrl + '/find-theater',
+    data: { search }
+  })
+}

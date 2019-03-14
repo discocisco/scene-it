@@ -28,10 +28,122 @@ body {
   }
 }
 
-.card {
+.movie-card {
   margin: 20px 0;
 
-  .card-img-top {
+  .movie-card-img {
     height: 380px;
+  }
+}
+
+.yelp-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.yelp-card {
+  border-radius: 10px;
+  box-shadow: 0 10px 20px #ccc;
+  display: flex;
+  height: 300px;
+  margin: 50px auto;
+  width: 870px;
+
+  .yelp-card-img {
+    border-radius: 10px 0 0 10px;
+    height: 300px;
+    object-fit: cover;
+    width: 300px;
+  }
+
+  .yelp-card-info {
+    display: flex;
+    height: inherit;
+    margin-left: 20px;
+    width: 550px;
+
+    .yelp-card-details {
+      padding: 20px 0;
+      text-align: left;
+      width: 350px;
+
+      .yelp-theater-name {
+        height: 100px;
+      }
+
+      .yelp-card-rating {
+        height: 160px;
+
+        .yelp-logo {
+          height: auto;
+          width: 140px;
+        }
+
+        .yelp-theater-rating {
+          height: 24px;
+          width: 132px;
+        }
+
+        .rating-0 {
+          background-image: url('../img/large_0.png');
+          background-repeat: no-repeat;
+        }
+
+        .rating-1 {
+          background-image: url('../img/large_1.png');
+          background-repeat: no-repeat;
+        }
+
+        .rating-15 {
+          background-image: url('../img/large_1.5.png');
+          background-repeat: no-repeat;
+        }
+
+        .rating-2 {
+          background-image: url('../img/large_2.png');
+          background-repeat: no-repeat;
+        }
+
+        .rating-25 {
+          background-image: url('../img/large_2.5.png');
+          background-repeat: no-repeat;
+        }
+
+        .rating-3 {
+          background-image: url('../img/large_3.png');
+          background-repeat: no-repeat;
+        }
+
+        .rating-35 {
+          background-image: url('../img/large_3.5.png');
+          background-repeat: no-repeat;
+        }
+
+        .rating-4 {
+          background-image: url('../img/large_4.png');
+          background-repeat: no-repeat;
+        }
+
+        .rating-45 {
+          background-image: url('../img/large_4.5.png');
+          background-repeat: no-repeat;
+        }
+
+        .rating-5 {
+          background-image: url('../img/large_5.png');
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    .yelp-theater-contact {
+      padding: 20px;
+      text-align: right;
+      width: 200px;
+
+      .yelp-theater-address {
+        margin: 0;
+      }
+    }
   }
 }

@@ -6,9 +6,9 @@ import Card from 'react-bootstrap/Card'
 
 const MovieCard = ({ id, name, releaseDate, poster, favorite }) => (
   <div className='col-3'>
-    <Card bg='dark' text='white'>
+    <Card className='movie-card' bg={favorite ? 'light' : 'dark'} text={favorite ? '' : 'white'}>
       <Link to={'/movies/' + id}>
-        <Card.Img variant="top" src={poster} />
+        <Card.Img className='movie-card-img' variant="top" src={poster} />
       </Link>
       <Card.Body>
         <Card.Title>{name} {favorite && '💜'}</Card.Title>
