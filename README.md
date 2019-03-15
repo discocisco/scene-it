@@ -1,4 +1,4 @@
-[![Screenshot of Scene It Application](https://imgur.com/l2W5piy)](https://discocisco.github.io/scene-it)
+[![Screenshot of Scene It Application](https://imgur.com/l2W5piy.png)](https://discocisco.github.io/scene-it)
 
 # Scene It | MovieDb Web Application
 
