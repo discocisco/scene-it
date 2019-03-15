@@ -1,4 +1,4 @@
-[![Screenshot of Scene It Application](https://imgur.com/a/Pje9fpU)](https://discocisco.github.io/scene-it)
+[![Screenshot of Scene It Application](https://imgur.com/l2W5piy)](https://discocisco.github.io/scene-it)
 
 # Scene It | MovieDb Web Application
 
@@ -33,7 +33,7 @@ The focus of this project was to establish a basic skeleton of content before br
 
 ## Close, but still not in reach _(yet!)_
 -   Incorporating usage of a third-party API to populate movies table so that users can always view an updated list of movies with additional information (rating, critic review scores, box office numbers, etc.)
--   API key for `TheMovieDb` has been successfully required. Next steps are to configure back-end to communicate with the API appropriately.
+-   API key for `TheMovieDb` has been successfully acquired. Next steps are to configure back-end to communicate with the API appropriately.
 -   Allow users with accounts from `TheMovieDb` or Guests to create sessions within Scene It so that they are able to review movies and have their reviews reflected through the application.
 -   Responsive design for all screensizes.
 -   Accessability features.
@@ -41,8 +41,8 @@ The focus of this project was to establish a basic skeleton of content before br
 
 ### Wireframes and user stories
 
-##### [Wireframes located here.](https://imgur.com/a/e4u4IJN)
-##### User stories:
+#### [Wireframes located here.](https://imgur.com/a/e4u4IJN)
+#### User stories:
 
 -   As an unregistered user, I would like to view a list of movies.
 -   As an unregistered user, I would like to view movie reviews.
