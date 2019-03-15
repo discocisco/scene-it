@@ -22,8 +22,11 @@ class FindTheater extends Component {
   submitSearch = event => {
     event.preventDefault()
     findTheaters(this.state.search)
-      .then(res => this.setState({ businesses: res.data.businesses }))
-      .catch(console.error)
+      .then(res => this.setState({ businesses: res.data.businesses, search: '' }))
+      .catch(error => {
+        console.error(error)
+        this.setState({ search: '' })
+      })
   }
 
   render () {
