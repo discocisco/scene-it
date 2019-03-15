@@ -30,6 +30,7 @@ class FindTheater extends Component {
     return (
       <div className='yelp-container'>
         <form className='find-theater-form' onSubmit={this.submitSearch}>
+          <h3>Find a theater near you!</h3>
           <input
             required
             name='search'

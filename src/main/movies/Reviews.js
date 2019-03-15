@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 
 import { getReviews, deleteReview } from './api.js'
@@ -43,12 +43,16 @@ class Reviews extends Component {
     return (
       <div className='movie-reviews'>
         {this.state.reviews.map(review =>
-          <Fragment key={review.id}>
-            <p>{review.text_body}</p>
-            <p>{review.user.email}</p>
-            {this.state.user ? (this.state.user.email === review.user.email ? <Link to={`/reviews/${review.id}/edit`} params={{ movieId: review.movie.id, textBody: review.text_body }}><button>Edit</button></Link> : '') : ''}
-            {this.state.user ? (this.state.user.email === review.user.email ? <button onClick={() => this.removeReview(review.id)}>Delete</button> : '') : ''}
-          </Fragment>
+          <div key={review.id} className='review-wrap'>
+            <div className='review-body-content'>
+              <p className='review-text-body'>{review.text_body}</p>
+              <p className='review-user'>{review.user.email}</p>
+            </div>
+            <div className='review-user-btns'>
+              {this.state.user ? (this.state.user.email === review.user.email ? <Link to={`/reviews/${review.id}/edit`} params={{ movieId: review.movie.id, textBody: review.text_body }}><button>Edit</button></Link> : '') : ''}
+              {this.state.user ? (this.state.user.email === review.user.email ? <button onClick={() => this.removeReview(review.id)}>Delete</button> : '') : ''}
+            </div>
+          </div>
         )}
       </div>
     )

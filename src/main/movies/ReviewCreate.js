@@ -28,7 +28,7 @@ class ReviewCreate extends Component {
   render () {
     return (
       <form className='review-form' onSubmit={this.addReview}>
-        <input name='textBody' type='text' value={this.state.textBody} placeholder='Add your review here' onChange={this.handleChange}/>
+        <input required name='textBody' type='text' value={this.state.textBody} placeholder='Add your review here' onChange={this.handleChange}/>
         <button type='submit'>Submit</button>
       </form>
     )

@@ -1,5 +1,45 @@
+$white: #fff;
+$eggshell: #f0ead6;
+$warmblack: #0e3b43;
+$turquoise: #55dde0;
+$lightcrimson: #ea638c;
+$darkorchid: #af2bbf;
+$violet: #8c00ff;
+$internetblack: #333;
+$darkviolet: #280060;
+$charcoal: #bbb;
+$black: #000;
+$darkgray: #222;
+$hotrodred: #f00;
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  src: url('../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 400;
+  src: url('../fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  src: url('../fonts/Source_Sans_Pro/SourceSansPro-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/Source_Sans_Pro/SourceSansPro-BoldItalic.ttf') format('truetype');
+}
+
 html,
 body {
+  background-color: $warmblack;
   height: 100%;
 }
 
@@ -9,32 +49,323 @@ body {
   padding: 0;
 }
 
+body > div {
+  background-color: $warmblack;
+  height: 100%;
+  overflow: scroll;
+
+  & > .container {
+    padding: 0;
+  }
+}
+
+main {
+  height: auto;
+  margin-top: 70px;
+}
+
+nav {
+  box-shadow: 0 10px 50px $black;
+}
+
+.main-header {
+  align-items: center;
+  background-color: $white;
+  color: $warmblack;
+  display: flex;
+  font-family: 'Source Sans Pro';
+  font-weight: 400;
+  height: 100px;
+  padding: 0 20px;
+
+  .header-movie-text {
+    color: $darkorchid;
+    font-size: inherit;
+    margin: 0;
+  }
+
+  a,
+  .welcome-message {
+    color: $warmblack;
+    font-size: 1.2em;
+    margin: 0 15px;
+
+    &:hover {
+      color: $lightcrimson;
+      text-decoration: none;
+    }
+  }
+
+}
+
+.main-header > .auth-nav {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+@media (max-width: 600px) {
+  .main-header {
+    flex-direction: column;
+    font-size: .7em;
+    height: auto;
+    padding: 10px;
+
+    h1 {
+      font-size: 2.5em;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .main-header > .auth-nav {
+    flex-direction: column;
+    width: 100%;
+
+    a,
+    .welcome-message {
+      border: 1px solid $charcoal;
+      margin-bottom: 5px;
+      text-align: center;
+      width: 80%;
+    }
+  }
+}
+
+form {
+  align-self: center;
+  background-color: $eggshell;
+  border: 10px solid $turquoise;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Source Sans Pro';
+  justify-content: center;
+  margin: auto;
+  max-width: 600px;
+  padding: 30px 40px;
+
+  h3,
+  input {
+    color: $warmblack;
+    margin-bottom: 5%;
+    padding: 10px 15px;
+  }
+
+  input {
+    &:hover {
+      background-color: $turquoise;
+    }
+  }
+
+  button {
+    align-self: flex-end;
+    border-radius: 5px;
+    color: $warmblack;
+    max-width: 200px;
+    padding: 10px 15px;
+
+    &:hover {
+      background-color: $darkorchid;
+      color: $white;
+    }
+  }
+}
+
 .alert {
   margin: 30px;
 }
 
+.carousel-item {
+  img {
+    height: 504px;
+    object-fit: cover;
+    object-position: bottom;
+  }
+}
+
+.carousel-caption {
+  font-family: 'Source Sans Pro';
+  text-shadow: 0 0 5px $black;
+
+  h3,
+  p {
+    color: $white;
+  }
+}
+
 .home-img-thumbnail {
-  height: 277px;
-  width: 277px;
+  height: 285px;
+  width: 285px;
 
   .img-thumbnail {
     border: 0;
     border-radius: 0;
-    height: 277px;
+    height: 285px;
     object-fit: cover;
     object-position: top;
     padding: 0;
-    width: 277px;
+    transition: object-position 1s;
+    width: 285px;
+
+    &:hover {
+      object-position: bottom;
+    }
   }
 }
 
 .movie-card {
+  background-color: $black;
+  font-family: 'Source Sans Pro';
   margin: 20px 0;
 
   .movie-card-img {
     height: 380px;
   }
+
+  .card-body {
+    a {
+      color: $darkorchid;
+    }
+
+    .card-title {
+      font-size: 1.5em;
+    }
+  }
 }
+
+.movie-jumbotron {
+  background-color: $darkgray;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  padding: 64px;
+
+  .add-fav-btn,
+  .remove-fav-btn {
+    background-color: $charcoal;
+    border-radius: 5px;
+    color: $darkgray;
+    font-family: 'Source Sans Pro';
+    font-size: 1.3rem;
+    padding: 5px 10px;
+  }
+
+  .remove-fav-btn {
+    &:hover {
+      background-color: $darkorchid;
+      color: $white;
+    }
+  }
+
+  .add-fav-btn {
+    &:hover {
+      background-color: $turquoise;
+      color: $warmblack;
+    }
+  }
+
+  .movie-page-title {
+    color: $turquoise;
+    font-family: 'Source Sans Pro';
+    font-size: 5rem;
+  }
+
+  .movie-page-release {
+    color: $white;
+    font-size: 1.2rem;
+  }
+
+  hr {
+    border-color: $charcoal;
+  }
+}
+
+.reviews-wrapper {
+  background-color: $eggshell;
+  border-radius: 5px;
+  color: $turquoise;
+  overflow: scroll;
+  padding-left: 15px;
+
+  .movie-reviews {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+
+    .review-wrap {
+      align-items: center;
+      background-color: $white;
+      border-radius: 10px;
+      color: $warmblack;
+      display: flex;
+      font-family: 'Source Sans Pro';
+      justify-content: space-between;
+      margin: 10px 0;
+      padding: 15px;
+      width: 100%;
+    }
+  }
+}
+
+.reviews-header {
+  color: $darkorchid;
+  display: flex;
+  font-family: 'Source Sans Pro';
+  font-weight: 400;
+  justify-content: space-between;
+  margin-top: 15px;
+
+  .add-review-btn {
+    border-radius: 5px;
+
+    &:hover {
+      background-color: $darkorchid;
+      color: $white;
+    }
+  }
+}
+
+.review-body-content {
+  display: flex;
+  flex-direction: column;
+
+  & p {
+    margin: auto 0;
+  }
+
+  .review-user {
+    color: $charcoal;
+    // font-style: italic;
+  }
+}
+
+.review-user-btns > button {
+  border-radius: 5px;
+  margin: 0 5px;
+
+  &:hover {
+    background-color: $hotrodred;
+    color: $white;
+  }
+}
+
+.review-user-btns > a {
+  button {
+    border-radius: 5px;
+    margin: 0 5px;
+
+    &:hover {
+      background-color: $lightcrimson;
+      color: $white;
+    }
+  }
+}
+
+.movie-page-poster {
+  width: inherit;
+}
+
 
 .yelp-container {
   margin-top: 20px;
@@ -42,9 +373,11 @@ body {
 }
 
 .yelp-card {
+  background-color: $white;
   border-radius: 10px;
-  box-shadow: 0 10px 20px #ccc;
+  box-shadow: 0 10px 20px $black;
   display: flex;
+  font-family: 'Source Sans Pro';
   height: 300px;
   margin: 50px auto;
   width: 870px;

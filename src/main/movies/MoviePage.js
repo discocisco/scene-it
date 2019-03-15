@@ -2,8 +2,6 @@ import React, { Component, Fragment } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import moment from 'moment'
 
-import './MoviePage.scss'
-
 import Reviews from './Reviews.js'
 import { showMovie } from './api.js'
 import { getFavorites, createFavorite, destroyFavorite } from '../favorites/api.js'
@@ -92,19 +90,22 @@ class MoviePage extends Component {
   render () {
     return (
       <Fragment>
-        <Jumbotron>
-          <h1>{this.state.name}</h1>
+        <Jumbotron bsPrefix='movie-jumbotron'>
+          <h1 className='movie-page-title'>{this.state.name}</h1>
           <hr className="my-4"></hr>
-          <p>Released on {moment(this.state.releaseDate).format('LL')}</p>
-          {this.state.user ? (this.state.isFavorite ? <button onClick={() => this.removeFav()}>Remove from Favorites</button> : <button onClick={this.addFav}>Add to Favorites</button>) : ''}
+          <p className='movie-page-release'>Released on {moment(this.state.releaseDate).format('LL')}</p>
+          {this.state.user ? (this.state.isFavorite ? <button className='remove-fav-btn' onClick={() => this.removeFav()}>Remove from Favorites</button> : <button className='add-fav-btn' onClick={this.addFav}>Add to Favorites</button>) : ''}
         </Jumbotron>
         <Container>
           <Row>
-            <Col xs='8'>
-              {this.state.user ? <Link to={'/movies/' + this.props.match.params.id + '/review-create'} params={{ movieId: this.props.match.params.id }}><button>Add review</button></Link> : ''}
+            <Col className='reviews-wrapper' xs='8'>
+              <div className='reviews-header'>
+                <h4 className='reviews-wrapper-title'>
+                User Reviews:</h4>{this.state.user ? <Link to={'/movies/' + this.props.match.params.id + '/review-create'} params={{ movieId: this.props.match.params.id }}><button className='add-review-btn'>Add review</button></Link> : ''}
+              </div>
               <Reviews name={this.state.name} user={this.state.user}/>
             </Col>
-            <Col xs='4'>
+            <Col className='movie-img-wrapper' xs='4'>
               <img className='movie-page-poster' src={this.state.poster}/>
             </Col>
           </Row>

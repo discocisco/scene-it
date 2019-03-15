@@ -36,7 +36,7 @@ class ReviewEdit extends Component {
   render () {
     return (
       <form className='review-form' onSubmit={this.editReview}>
-        <input name='textBody' type='text' value={this.state.textBody} onChange={this.handleChange}/>
+        <input required name='textBody' type='text' value={this.state.textBody} onChange={this.handleChange}/>
         <button type='submit'>Submit</button>
       </form>
     )

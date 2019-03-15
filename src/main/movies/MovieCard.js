@@ -4,9 +4,11 @@ import moment from 'moment'
 
 import Card from 'react-bootstrap/Card'
 
+// bg={favorite ? 'danger' : 'dark'} text='white'
+
 const MovieCard = ({ id, name, releaseDate, poster, favorite }) => (
   <div className='col-3'>
-    <Card className='movie-card' bg={favorite ? 'light' : 'dark'} text={favorite ? '' : 'white'}>
+    <Card className='movie-card'>
       <Link to={'/movies/' + id}>
         <Card.Img className='movie-card-img' variant="top" src={poster} />
       </Link>

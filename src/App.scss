@@ -28,21 +28,3 @@ $charcoal: #ccc;
 .flash-error {
   background-color: $error;
 }
-
-.auth-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 15% auto 0;
-  max-width: 600px;
-
-  h3,
-  input {
-    margin-bottom: 5%;
-  }
-
-  button {
-    align-self: flex-end;
-    max-width: 200px;
-  }
-}
