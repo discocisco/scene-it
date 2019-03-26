@@ -15,6 +15,16 @@ export const showMovie = (id) => {
   })
 }
 
+export const createMovie = (data) => {
+  return axios({
+    method: 'POST',
+    url: apiUrl + '/movies/',
+    data: {
+      movie: data
+    }
+  })
+}
+
 export const getReviews = () => {
   return axios({
     method: 'GET',
@@ -75,5 +85,12 @@ export const findTheaters = (search) => {
     method: 'POST',
     url: apiUrl + '/find-theater',
     data: { search }
+  })
+}
+
+export const nowPlaying = () => {
+  return axios({
+    method: 'GET',
+    url: apiUrl + '/now-playing'
   })
 }

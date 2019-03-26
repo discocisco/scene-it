@@ -10,7 +10,7 @@ const MovieCard = ({ id, name, releaseDate, poster, favorite }) => (
   <div className='col-3'>
     <Card className='movie-card'>
       <Link to={'/movies/' + id}>
-        <Card.Img className='movie-card-img' variant="top" src={poster} />
+        <Card.Img className='movie-card-img' variant="top" src={poster.includes('http') ? poster : `https://image.tmdb.org/t/p/w500${poster}`} />
       </Link>
       <Card.Body>
         <Card.Title>{name} {favorite && '💜'}</Card.Title>

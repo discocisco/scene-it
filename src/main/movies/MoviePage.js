@@ -88,6 +88,12 @@ class MoviePage extends Component {
   }
 
   render () {
+    if (!this.state.name) {
+      return (
+        <p>Loading your movie..</p>
+      )
+    }
+
     return (
       <Fragment>
         <Jumbotron bsPrefix='movie-jumbotron'>
@@ -106,7 +112,7 @@ class MoviePage extends Component {
               <Reviews name={this.state.name} user={this.state.user}/>
             </Col>
             <Col className='movie-img-wrapper' xs='4'>
-              <img className='movie-page-poster' src={this.state.poster}/>
+              <img className='movie-page-poster' src={this.state.poster.includes('http') ? this.state.poster : `https://image.tmdb.org/t/p/w500${this.state.poster}`}/>
             </Col>
           </Row>
         </Container>
