@@ -21,6 +21,7 @@ const alwaysOptions = (
   <React.Fragment>
     <Link to='/'>Home</Link>
     <Link to='/movies'>Movies</Link>
+    <Link to='/search-movie'>Find a Movie</Link>
     <Link to='/find-theater'>Find a Theater</Link>
   </React.Fragment>
 )

@@ -46,7 +46,10 @@ class HomeMovies extends Component {
     }
 
     return (
-      <Container>
+      <Container className='home-movies-wrapper'>
+        <Row className='home-movies-title'>
+          <h4>Now Playing:</h4>
+        </Row>
         <Row>
           {movies.map(movie =>
             <MovieThumbnail

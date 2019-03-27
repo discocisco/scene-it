@@ -67,7 +67,7 @@ class SearchMovie extends Component {
     return (
       <div className='search-movie-container'>
         <form className='search-movie-form' onSubmit={this.submitSearch}>
-          <h3>{'Can\'t find your movie? Search for it!'}</h3>
+          <h3>{'Please enter a movie title:'}</h3>
           <input
             required
             name='search'

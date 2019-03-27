@@ -195,6 +195,23 @@ form {
   }
 }
 
+.home-movies-wrapper {
+  margin-top: 40px;
+
+  .home-movies-title {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+
+    h4 {
+      color: $white;
+      font-family: 'Source Sans Pro';
+      font-size: 2em;
+      text-shadow: 0 0 20px $turquoise;
+    }
+  }
+}
+
 .home-img-thumbnail {
   height: 285px;
   width: 285px;
@@ -211,6 +228,25 @@ form {
 
     &:hover {
       object-position: bottom;
+    }
+  }
+}
+
+.search-movie-wrapper {
+  display: flex;
+  font-family: 'Source Sans Pro';
+  font-size: 1.6em;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  button {
+    border-radius: 20px;
+    color: $warmblack;
+    padding: 5px 15px;
+
+    &:hover {
+      background-color: $darkorchid;
+      color: $white;
     }
   }
 }
@@ -477,6 +513,28 @@ form {
 
       .yelp-theater-address {
         margin: 0;
+      }
+    }
+  }
+}
+
+.search-movie-container {
+  .found-movies {
+    margin-top: 40px;
+
+    .card-footer {
+      padding: 0;
+
+      button {
+        background-color: $turquoise;
+        color: $darkviolet;
+        padding: 5px 0;
+        width: 100%;
+
+        &:hover {
+          background-color: $darkorchid;
+          color: $white;
+        }
       }
     }
   }

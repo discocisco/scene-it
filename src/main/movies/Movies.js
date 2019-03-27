@@ -45,10 +45,8 @@ class Movies extends Component {
 
     return (
       <Fragment>
-        <div className='row'>
-          <Link to='/search-movie'>
-            <button>Search</button>
-          </Link>
+        <div className='row search-movie-wrapper'>
+          <Link to='/search-movie'><button>Find a Movie</button></Link>
         </div>
         <div className='row'>
           {movies.map(movie =>

@@ -97,7 +97,7 @@ class MoviePage extends Component {
     return (
       <Fragment>
         <Jumbotron bsPrefix='movie-jumbotron'>
-          <h1 className='movie-page-title'>{this.state.name}</h1>
+          <h1 className='movie-page-title'>{this.state.name} {this.state.isFavorite && '💜'}</h1>
           <hr className="my-4"></hr>
           <p className='movie-page-release'>Released on {moment(this.state.releaseDate).format('LL')}</p>
           {this.state.user ? (this.state.isFavorite ? <button className='remove-fav-btn' onClick={() => this.removeFav()}>Remove from Favorites</button> : <button className='add-fav-btn' onClick={this.addFav}>Add to Favorites</button>) : ''}
