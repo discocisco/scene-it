@@ -14,6 +14,7 @@ import MoviePage from './main/movies/MoviePage.js'
 import ReviewCreate from './main/movies/ReviewCreate.js'
 import ReviewEdit from './main/movies/ReviewEdit.js'
 import FindTheater from './main/movies/FindTheater.js'
+import SearchMovie from './main/movies/SearchMovie.js'
 
 import Alert from 'react-bootstrap/Alert'
 
@@ -78,6 +79,9 @@ class App extends Component {
           )} />
           <Route exact path='/find-theater' render={() => (
             <FindTheater alert={this.alert} setUser={this.setUser} user={user} />
+          )} />
+          <Route exact path='/search-movie' render={() => (
+            <SearchMovie alert={this.alert} setUser={this.setUser} user={user} />
           )} />
         </main>
       </React.Fragment>

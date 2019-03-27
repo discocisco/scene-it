@@ -25,6 +25,14 @@ export const createMovie = (data) => {
   })
 }
 
+export const searchMovie = (search) => {
+  return axios({
+    method: 'POST',
+    url: apiUrl + '/search-movie',
+    data: { search }
+  })
+}
+
 export const getReviews = () => {
   return axios({
     method: 'GET',

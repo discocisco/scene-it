@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
+import { Link } from 'react-router-dom'
 
 import MovieCard from './MovieCard.js'
 import { getMovies } from './api.js'
@@ -43,17 +44,24 @@ class Movies extends Component {
     }
 
     return (
-      <div className='row'>
-        {movies.map(movie =>
-          <MovieCard
-            key={movie.id}
-            id={movie.id}
-            name={movie.name}
-            releaseDate={movie.release_date}
-            poster={movie.poster}
-            favorite={favorites.some(favorite => favorite.movie.id === movie.id)}
-          />)}
-      </div>
+      <Fragment>
+        <div className='row'>
+          <Link to='/search-movie'>
+            <button>Search</button>
+          </Link>
+        </div>
+        <div className='row'>
+          {movies.map(movie =>
+            <MovieCard
+              key={movie.id}
+              id={movie.id}
+              name={movie.name}
+              releaseDate={movie.release_date}
+              poster={movie.poster}
+              favorite={favorites.some(favorite => favorite.movie.id === movie.id)}
+            />)}
+        </div>
+      </Fragment>
     )
   }
 }
